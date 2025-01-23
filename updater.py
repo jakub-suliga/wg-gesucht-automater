@@ -26,20 +26,19 @@ USERNAME = config.get('Login', 'email')
 PASSWORD = config.get('Login', 'password')
 LISTING_URL = config.get('Listing', 'listing_url')
 DELAY = int(config.get('Driver', 'delay'))
-CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver' # mac-only
 
 # Login
-driver = webdriver.Chrome(CHROMEDRIVER_PATH)
+driver = webdriver.Chrome()
 driver.get('https://wg-gesucht.de')
 # Remove cookie button
-btn = driver.find_element_by_id("cookie-confirm").click()
-driver.find_element_by_link_text("LOGIN").click()
-time.sleep(1)
-username = driver.find_element_by_name("login_email_username")
-password = driver.find_element_by_id("login_password")
+btn = driver.find_element(By.ID,"cmpbntyestxt").click()
+driver.find_element(By.LINK_TEXT,"Mein Konto").click()
+time.sleep(10)
+username = driver.find_element(By.ID,"login_email_username")
+password = driver.find_element(By.ID,"login_password")
 username.send_keys(USERNAME)
 password.send_keys(PASSWORD)
-driver.find_element_by_id('login_submit').click()
+driver.find_element(By.ID,'login_submit').click()
 time.sleep(5)
 
 while True:
