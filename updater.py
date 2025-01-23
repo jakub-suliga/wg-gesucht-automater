@@ -46,8 +46,8 @@ while True:
     driver.get(
         LISTING_URL)
     time.sleep(3)
-    contact = driver.find_element_by_class_name('bottom_contact_box')
-    edit = contact.find_element_by_link_text('ANGEBOT BEARBEITEN')
+    contact = driver.find_element(By.CLASS_NAME,'bottom_contact_box')
+    edit = contact.find_element(By.LINK_TEXT,'ANGEBOT BEARBEITEN')
     edit.send_keys(Keys.TAB)
     time.sleep(1)
     edit.click()
