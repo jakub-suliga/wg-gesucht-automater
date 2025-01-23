@@ -54,11 +54,11 @@ while True:
     time.sleep(3)
 
     # Refresh listing
-    btn = driver.find_element_by_class_name('btn-orange') # weiter
+    btn = driver.find_element(By.CLASS_NAME,'btn-orange') # weiter
     btn.send_keys(Keys.TAB)
     time.sleep(2)
     btn.send_keys(Keys.SPACE)
-    btn = driver.find_element_by_class_name('btn-orange') # Änderungen ubernehmen
+    btn = driver.find_element(By.CLASS_NAME,'btn-orange') # Änderungen ubernehmen
     btn.send_keys(Keys.TAB)
     time.sleep(2)
     btn.send_keys(Keys.SPACE)
